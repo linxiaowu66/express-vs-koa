@@ -1,0 +1,28 @@
+{
+  "name": "express-vs-koa",
+  "version": "1.0.0",
+  "description": "show difference between express and koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/linxiaowu66/express-vs-koa.git"
+  },
+  "keywords": [
+    "express",
+    "koa",
+    "middleware"
+  ],
+  "author": "linxiaowu66",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linxiaowu66/express-vs-koa/issues"
+  },
+  "homepage": "https://github.com/linxiaowu66/express-vs-koa#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "koa": "^2.8.2"
+  }
+}
