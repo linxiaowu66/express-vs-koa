@@ -12,13 +12,15 @@ app.use(async (req, res, next) => {
   console.log('I am the first middleware')
   const startTime = Date.now()
   console.log(`================ start ${req.method} ${req.url}`, { query: req.query, body: req.body });
-  res.on('finish', () => {
-    const cost = Date.now() - startTime
-    console.log(`================ end ${req.method} ${req.url} ${res.statusCode} - ${cost} ms`)
-  })
+  // 正确的写法
+  // res.on('finish', () => {
+  //   const cost = Date.now() - startTime
+  //   console.log(`================ end ${req.method} ${req.url} ${res.statusCode} - ${cost} ms`)
+  // })
   next()
-  // const cost = Date.now() - startTime
-  // console.log(`================ end ${req.method} ${req.url} ${res.statusCode} - ${cost} ms`)
+  // 错误的写法，why？
+  const cost = Date.now() - startTime
+  console.log(`================ end ${req.method} ${req.url} ${res.statusCode} - ${cost} ms`)
 })
 app.use((req, res, next) => {
   console.log('I am the second middleware')
