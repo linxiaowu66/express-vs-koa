@@ -30,7 +30,11 @@ router.get('/api/test1', async(ctx, next) => {
   ctx.body = 'hello'
 })
 
+router.get('/api/testerror', async(ctx, next) => {
+  throw new Error('I am error.')
+})
+
 app.use(router.routes())
 
-app.listen(3002)
-console.log('server listening at port 3002')
+app.listen(3000)
+console.log('server listening at port 3000')

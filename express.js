@@ -20,10 +20,7 @@ app.get('/api/test1', async(req, res, next) => {
   await sleep(2000)
   res.status(200).send('hello')
 })
-app.get('/api/test2', async(req, res, next) => {
-  console.log('I am the router middleware => /api/test2')
-  res.status(200).send('world')
-})
+
 app.get('/api/testerror', (req, res, next) => {
   console.log('I am the router middleware => /api/testerror')
   throw new Error('I am error.')
@@ -41,5 +38,5 @@ app.use(async(err, req, res, next) => {
   console.log('last middleware end calling')
 })
 
-app.listen(3001)
-console.log('server listening at port 3001')
+app.listen(3000)
+console.log('server listening at port 3000')
